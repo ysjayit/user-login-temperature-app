@@ -32,17 +32,19 @@ This application is used to monitor the temperatures of different cities when th
 - Create a sqlite file (Ex: database.sqlite) inside the /database folder in the application.
 - Configure the environment settings of database and temperature in above `.env` file.
 
-`DB_CONNECTION=sqlite`
+`DB_CONNECTION=sqlite`<br />
 `DB_DATABASE=/absolute/path/to/database.sqlite`
 
 In order to locally use **sqlite** as database, configure `DB_DATABASE` with absolute path to sqlite file created previously.
 
-Also configure the below temperature related parameters.
+Also configure the below temperature related parameters in `.env`.
 
-`NO_OF_CITIES= < Number of cities to capture wheather details >`
-`CITY_1={"name":"< Name of the city >","lat":< Latitude of the city >,"lon":< Longitude of the city >}`
-`CITY_2={"name":"< Name of the city >","lat":< Latitude of the city >,"lon":< Longitude of the city >}`
-`OPENWEATHERMAP_API_Key=< API Key for OpenWeatherMap >`
+| Parameter  | Value  |
+| :------------ | :------------ |
+| NO_OF_CITIES | Number of cities to capture temperature |
+| CITY_1 | Json containing name, latitude and longitude. <br />`{"name":"< Name of the city >","lat":< Latitude of the city >,"lon":< Longitude of the city >}` |
+| CITY_2 | Json containing name, latitude and longitude. <br />`{"name":"< Name of the city >","lat":< Latitude of the city >,"lon":< Longitude of the city >}` |
+| OPENWEATHERMAP_API_Key | API Key for **OpenWeatherMap** |
 
 - Set the application key `php artisan key:generate`
 - Run migration `php artisan migrate`
